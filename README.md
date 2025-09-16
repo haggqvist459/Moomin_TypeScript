@@ -14,7 +14,7 @@
   - [ ] All / Owned mugs ?  
   - [ ] All / Series / Seasonal ? 
   - [ ] Toggle visibility between all / owned? 
-  - [ ] Search function for mugs? 
+  - [ ] Search function for mugs ? 
 
 
 #### Admin Page: 
