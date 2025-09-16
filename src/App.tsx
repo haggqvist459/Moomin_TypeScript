@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ROUTES } from '@/utils';
-import { MainLayout } from '@/layouts'
+import { AdminLayout, MainLayout } from '@/layouts'
 
 const App = () => {
 
@@ -8,6 +8,9 @@ const App = () => {
     <BrowserRouter>
       <Routes>
           <Route path={ROUTES.HOME} element={<MainLayout />}>
+            
+          </Route>
+          <Route path={ROUTES.ADMIN} element={<AdminLayout />}>
 
           </Route>
       </Routes>
