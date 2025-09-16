@@ -23,3 +23,7 @@ export const NAVBAR_OPTIONS = {
         text: 'About'
     },
 } as const
+
+export const LOCALSTORAGE_KEYS = {
+  OWNED_MUGS: 'owned_mugs'
+} as const 
