@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { mugReducer } from "./slices";
 
 export const store = configureStore({
   reducer : {
-
+    mugReducer: mugReducer
   }
 })
 
