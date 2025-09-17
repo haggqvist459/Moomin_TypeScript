@@ -1,16 +1,19 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { mugReducer } from "./slices";
+import { appReducer } from "./slices";
+import { saveData, LOCALSTORAGE_KEYS } from "@/utils";
 
 export const store = configureStore({
   reducer : {
-    mugReducer: mugReducer
+    appState: appReducer
   }
 })
 
 store.subscribe(() => {
   
   const state = store.getState();
-  // store list of owned mugs into localStorage 
+  Object.values(LOCALSTORAGE_KEYS).forEach((key) => {
+    saveData(key, state[key])
+  })
 
 })
 

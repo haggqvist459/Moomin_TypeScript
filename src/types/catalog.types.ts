@@ -1,6 +1,8 @@
+import { SEASON_OPTIONS, SERIES_OPTIONS } from "@/utils";
 
-type Season = "-" | "Summer" | "Winter"
-type Series = "-" | "Anniversary" | "Moomin's Day" | "Christmas" | "Millenium" | "Moominvalley"
+
+export type Season = "-" | (typeof SEASON_OPTIONS)[number]
+export type Series = "-" | (typeof SERIES_OPTIONS)[number]
 
 export type CatalogObject = {
   slug: string,
@@ -8,7 +10,7 @@ export type CatalogObject = {
   year: string,
   description: string, 
   notes: string, 
-  number:  number,
+  number: number,
   season: Season,
   series: Series
 }

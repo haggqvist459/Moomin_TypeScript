@@ -12,14 +12,18 @@ const catalog: CatalogObject[] = rawCatalog.map(obj => ({
 
 const initialState: MugStateData = loadData<MugStateData>(LOCALSTORAGE_KEYS.OWNED_MUGS) ?? {
   mugList: catalog,
-  ownedList: []
+  ownedList: [],
+  filters: {
+    season: '-',
+    series: '-',
+  }
 }
 
-const mugSlice = createSlice({
-  name: 'mugSlice',
+const appSlice = createSlice({
+  name: 'appSlice',
   initialState,
   reducers: {}
 })
 
-export const { } = mugSlice.actions
-export default mugSlice.reducer
+export const { } = appSlice.actions
+export default appSlice.reducer

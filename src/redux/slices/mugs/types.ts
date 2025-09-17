@@ -1,6 +1,7 @@
-import { CatalogObject } from "@/types/catalog.types"
+import { CatalogObject, Season, Series } from "@/types/catalog.types"
 
-export type MugStateData = { 
+export type MugStateData = {
   mugList: CatalogObject[]
-  ownedList: number[]
+  ownedList: number[],
+  filters: { season: Season; series: Series }
 }
