@@ -1,11 +1,12 @@
-import { useAppDispatch, useAppSelector } from "@/redux/";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { DEFAULT_OPTION, SEASON_OPTIONS, SERIES_OPTIONS } from "@/utils";
 import { Dropdown, mapToDropdownOptions } from "@/components/ui/dropdown";
+
 
 const HomePage = () => {
 
   const mugList = useAppSelector(state => state.appState.mugList);
-  const ownedMugs = useAppSelector(state => state.appState.ownedMugs);
+  const ownedMugs = useAppSelector(state => state.appState.ownedList);
   // const filters = useAppSelector(state => state.appState.filters);
   const seasonDropdownOptions = mapToDropdownOptions({ ...DEFAULT_OPTION, ...Object.fromEntries(SEASON_OPTIONS.map(v => [v, v])) });
   const seriesDropdownOptions = mapToDropdownOptions({ ...DEFAULT_OPTION, ...Object.fromEntries(SERIES_OPTIONS.map(v => [v, v])) });
