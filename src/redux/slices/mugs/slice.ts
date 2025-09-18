@@ -1,7 +1,8 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice  } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit"; 
 import { loadData, saveData, LOCALSTORAGE_KEYS } from "@/utils";
-import { MugStateData, Filters } from "./types";
-import { CatalogObject } from "@/types/catalog.types";
+import type { MugStateData, Filters } from "./types";
+import type { CatalogObject } from "@/types/catalog.types";
 import rawCatalog from '@/assets/data/catalog_mugs.json';
 
 const catalog: CatalogObject[] = (rawCatalog as CatalogObject[]).map(obj => ({
@@ -43,12 +44,3 @@ const appSlice = createSlice({
 export const { updateFilter, clearFilters, saveMugToOwned, clearOwnedMugs } = appSlice.actions
 
 export default appSlice.reducer;
-
-export type AppState = ReturnType<typeof appSlice.reducer>;
-
-// export type AppState = typeof initialState;
-
-// loadData<MugStateData>(LOCALSTORAGE_KEYS.OWNED_MUGS) ??
-
-
-// src/redux/slices/mugs.slice.ts

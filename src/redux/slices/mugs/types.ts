@@ -1,4 +1,4 @@
-import { CatalogObject, Season, Series } from "@/types/catalog.types"
+import type { CatalogObject, Season, Series } from "@/types/catalog.types"
 
 export type Filters = { 
   season: Season,
