@@ -23,7 +23,7 @@ const MugListItem = ({ slug, number, name }: MugListItemProps) => {
           <img
             src={getMugImage(slug)}
             alt={name}
-            className="w-full h-auto object-contain mx-auto"
+            className="w-full h-auto object-contain"
           />
         </div>
       </div>

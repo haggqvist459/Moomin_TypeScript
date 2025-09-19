@@ -25,6 +25,13 @@ export const selectVisibleMugs = createSelector(
 
 export const selectMugByNumber = (mugNumber: number) =>
   createSelector(
-    (state: RootState) => state.appState.mugList,
-    (mugList) => mugList.find((mug) => mug.number === mugNumber)
+    (state: RootState) => ({
+      mugList: state.appState.mugList,
+      ownedList: state.appState.ownedList,
+    }),
+    ({ mugList, ownedList }) => {
+      const mug = mugList.find((m) => m.number === mugNumber);
+      if (!mug) return undefined;
+      return { ...mug, owned: ownedList.includes(mug.number) };
+    }
   );
