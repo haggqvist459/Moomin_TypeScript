@@ -32,6 +32,11 @@ export const DEFAULT_OPTION = {
   'All': '-'
 } as const
 
+export const OWNED_OPTIONS = [
+  "All",
+  "Owned"
+] as const
+
 export const SEASON_OPTIONS = [
   "Summer",
   "Winter",

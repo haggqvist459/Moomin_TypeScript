@@ -1,4 +1,4 @@
-import { DropdownOption } from "./types"
+import type { DropdownOption } from "./types"
 
 export const mapToDropdownOptions = <
   T extends Record<string, string>

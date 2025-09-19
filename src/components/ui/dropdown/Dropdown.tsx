@@ -1,4 +1,4 @@
-import { DropdownOption } from './types';
+import type { DropdownOption } from './types';
 
 type Props = {
   id: string
