@@ -25,7 +25,7 @@ const Dropdown = ({
           id={id}
           value={value}
           onChange={onChange}
-          className="dropdown-text"
+          className="dropdown-text pr-4 truncate"
         >
           {options.map((opt) => (
             <option key={opt.value} value={opt.value}>

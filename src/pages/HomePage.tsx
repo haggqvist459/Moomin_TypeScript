@@ -1,13 +1,13 @@
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { updateFilter } from "@/redux";
+import { updateFilter, selectVisibleMugs } from "@/redux";
 import { DEFAULT_OPTION, SEASON_OPTIONS, SERIES_OPTIONS, OWNED_OPTIONS } from "@/utils";
-import { Dropdown, mapToDropdownOptions, type DropdownOption } from "@/components/ui/dropdown";
+import { Dropdown, mapToDropdownOptions } from "@/components/ui/dropdown";
+import MugListItem from "@/components/ui/MugListItem";
 
 
 const HomePage = () => {
 
-  const mugList = useAppSelector(state => state.appState.mugList);
-  const ownedMugs = useAppSelector(state => state.appState.ownedList);
+  const visibleMugs = useAppSelector(selectVisibleMugs);
   const filters = useAppSelector(state => state.appState.filters);
 
   const dispatch = useAppDispatch()
@@ -18,8 +18,8 @@ const HomePage = () => {
 
 
   return (
-    <section className="w-full px-2 flex justify-center">
-      <div className="w-2/3 flex px-2 space-x-2">
+    <section className="w-full px-2 flex flex-col items-center justify-center">
+      <div className="mt-2 w-full md:w-2/3 flex px-2 space-x-2">
         <Dropdown
           id="seasonFilter"
           label="Seasonal Mugs"
@@ -42,8 +42,15 @@ const HomePage = () => {
           value={filters.owned}
         />
       </div>
-      <div className="">
-        {/* list section */}
+      <div className="my-10 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 space-x-2">
+        {visibleMugs.map(mug => (
+          <MugListItem
+            key={mug.number}
+            name={mug.name}
+            number={mug.number}
+            slug={mug.slug}
+          />
+        ))}
       </div>
     </section>
   );

@@ -1,6 +1,8 @@
 
 export const ROUTES = {
   HOME: '/',
+  DETAILS: '/details/:id',
+  DETAILS_PAGE: '/details/',
   ADMIN: '/admin',
   ABOUT: '/about',
   ERROR: '/*',
@@ -52,3 +54,9 @@ export const SERIES_OPTIONS = [
   "Moominvalley TV show",
   "Red Cross Charity",
 ] as const;
+
+
+export const PATHS = {
+  IMAGE_DIR: "/public/mugs",
+  IMAGE_PATH: "/mugs"
+} as const;

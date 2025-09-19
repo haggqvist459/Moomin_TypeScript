@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { loadData, saveData, LOCALSTORAGE_KEYS } from "@/utils";
 import type { MugStateData, Filters, FilterPayload } from "./types";
-import type { CatalogObject } from "@/types/catalog.types";
+import type { CatalogObject } from "@/types";
 import rawCatalog from '@/assets/data/catalog_mugs.json';
 
 const catalog: CatalogObject[] = (rawCatalog as CatalogObject[]).map(obj => ({
@@ -31,9 +31,11 @@ const appSlice = createSlice({
       switch (key) {
         case "season":
           state.filters.season = value as Filters["season"];
+          state.filters.series = "-"
           break;
         case "series":
           state.filters.series = value as Filters["series"];
+          state.filters.season = "-"
           break;
         case "owned":
           state.filters.owned = value as Filters["owned"];

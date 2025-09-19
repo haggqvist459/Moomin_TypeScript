@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ROUTES } from '@/utils';
 import { AdminLayout, MainLayout } from '@/layouts'
-import { AdminPage, HomePage } from './pages';
+import { AdminPage, DetailsPage, HomePage } from './pages';
 
 const App = () => {
 
@@ -10,6 +10,7 @@ const App = () => {
       <Routes>
           <Route path={ROUTES.HOME} element={<MainLayout />}>
             <Route index element={<HomePage /> }/>
+            <Route path={ROUTES.DETAILS} element={<DetailsPage />} />
           </Route>
           <Route path={ROUTES.ADMIN} element={<AdminLayout />}>
               <Route index element={<AdminPage />}/>
