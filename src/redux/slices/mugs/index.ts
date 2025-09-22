@@ -2,7 +2,7 @@ export * from './selectors';
 export { 
 updateFilter, 
 clearFilters, 
-saveMugToOwned, 
+toggleOwned, 
 clearOwnedMugs
 } from './slice';
 export * from './types';

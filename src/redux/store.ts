@@ -8,14 +8,14 @@ export const store = configureStore({
   }
 })
 
-// store.subscribe(() => {
+store.subscribe(() => {
+  const state = store.getState();
 
-//   const state = store.getState();
-//   Object.values(LOCALSTORAGE_KEYS).forEach((key) => {
-//     saveData(key, state[key])
-//   })
-
-// })
+  Object.values(LOCALSTORAGE_KEYS).forEach((key) => {
+    saveData(key, state.appState[key]);
+  });
+  
+});
 
 
 export type RootState = ReturnType<typeof store.getState>;

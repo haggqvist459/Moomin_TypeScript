@@ -1,6 +1,6 @@
 import { PATHS } from "./constants";
 
-const mugImages = import.meta.glob("/public/mugs/*.{jpg,png}", {
+const mugImages = import.meta.glob("../assets/mugs/*.{jpg,png}", {
   eager: true,
   import: "default",
 }) as Record<string, string>;

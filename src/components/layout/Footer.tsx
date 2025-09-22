@@ -8,7 +8,7 @@ const Footer = () => {
 
   return (
     <footer className={`bg-primary flex justify-center items-center my-auto ${isStandalone ? 'h-15 pb-2 ' : 'h-10'}`}>
-      <a href="https://github.com/haggqvist459/Moomin_TypeScript" target='_blank' className='underline text-sm text-blue-50'>Code on GitHub</a>
+      <a href="https://github.com/haggqvist459/Moomin_TypeScript" target='_blank' className='underline text-sm text-primary-text'>Code on GitHub</a>
     </footer>
   )
 }

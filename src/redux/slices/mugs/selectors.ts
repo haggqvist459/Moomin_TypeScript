@@ -25,13 +25,12 @@ export const selectVisibleMugs = createSelector(
 
 export const selectMugByNumber = (mugNumber: number) =>
   createSelector(
-    (state: RootState) => ({
-      mugList: state.appState.mugList,
-      ownedList: state.appState.ownedList,
-    }),
-    ({ mugList, ownedList }) => {
-      const mug = mugList.find((m) => m.number === mugNumber);
+    (state: RootState) => state.appState.mugList,
+    (state: RootState) => state.appState.ownedList,
+    (mugList, ownedList) => {
+      const mug = mugList.find(m => m.number === mugNumber);
       if (!mug) return undefined;
-      return { ...mug, owned: ownedList.includes(mug.number) };
+      const isOwned = ownedList.includes(mug.number);
+      return { mug, isOwned }; // stable mug reference + simple boolean
     }
   );

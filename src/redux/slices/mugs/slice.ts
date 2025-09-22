@@ -13,7 +13,7 @@ const catalog: CatalogObject[] = (rawCatalog as CatalogObject[]).map(obj => ({
 
 const initialState: MugStateData = {
   mugList: catalog,
-  ownedList: loadData<number[]>(LOCALSTORAGE_KEYS.OWNED_MUGS) ?? [],
+  ownedList: loadData<number[]>(LOCALSTORAGE_KEYS.OWNED_LIST) ?? [],
   filters: {
     season: '-',
     series: '-',
@@ -47,9 +47,14 @@ const appSlice = createSlice({
     clearFilters: (state) => {
       state.filters = { season: "-", series: "-", owned: "All" }
     },
-    saveMugToOwned: (state, action: PayloadAction<number>) => {
-      if (!state.ownedList.includes(action.payload)) {
-        state.ownedList.push(action.payload);
+    toggleOwned: (state, action: PayloadAction<number>) => {
+      const id = action.payload;
+      const index = state.ownedList.indexOf(id);
+
+      if (index === -1) {
+        state.ownedList.push(id);
+      } else {
+        state.ownedList.splice(index, 1);
       }
     },
     clearOwnedMugs: (state) => {
@@ -58,6 +63,6 @@ const appSlice = createSlice({
   }
 })
 
-export const { updateFilter, clearFilters, saveMugToOwned, clearOwnedMugs } = appSlice.actions
+export const { updateFilter, clearFilters, toggleOwned, clearOwnedMugs } = appSlice.actions
 
 export default appSlice.reducer;

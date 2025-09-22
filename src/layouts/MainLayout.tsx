@@ -3,7 +3,7 @@ import { NavBar, Footer } from "@/components/layout";
 
 const MainLayout = () => {
   return (
-    <div className="bg-neutral-200 min-h-screen flex flex-col relative">
+    <div className="bg-zinc-100 min-h-screen flex flex-col relative">
         <NavBar/>
       <div className="flex-grow">
         <Outlet />

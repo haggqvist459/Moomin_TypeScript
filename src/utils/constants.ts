@@ -27,7 +27,7 @@ export const NAVBAR_OPTIONS = {
 } as const
 
 export const LOCALSTORAGE_KEYS = {
-  OWNED_MUGS: 'owned_mugs'
+  OWNED_LIST: 'ownedList'
 } as const
 
 export const DEFAULT_OPTION = {
@@ -57,6 +57,5 @@ export const SERIES_OPTIONS = [
 
 
 export const PATHS = {
-  IMAGE_DIR: "/public/mugs",
-  IMAGE_PATH: "/mugs"
+  IMAGE_PATH: "../assets/mugs"
 } as const;

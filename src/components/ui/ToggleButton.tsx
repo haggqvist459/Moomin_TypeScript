@@ -25,7 +25,7 @@ const ToggleButton = ({
       type="button"
       aria-pressed={isToggled}
       onClick={onToggle}
-      className={`w-10 h-5 mb-0.5 rounded-full transition-all duration-[400ms] ${isToggled ? 'bg-primary' : 'bg-secondary'}`}
+      className={`w-10 h-5 rounded-full transition-all duration-[400ms] ${isToggled ? 'bg-primary' : 'bg-secondary'}`}
     >
       <div
         className={`w-5 h-5 bg-white rounded-full transition-all duration-[400ms] ${isToggled ? "translate-x-full" : "translate-x-0"
