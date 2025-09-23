@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 
-html, body {
+html,
+body {
   overflow-x: hidden;
+  background-color: #AEDCAE;
 }
 
 @layer base {
@@ -32,7 +34,8 @@ textarea:focus {
 @font-face {
   font-family: 'Rubik';
   src: url('./assets/fonts/Rubik-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900; /* full variable range */
+  font-weight: 100 900;
+  /* full variable range */
   font-style: normal;
   font-display: swap;
 }
@@ -207,4 +210,3 @@ textarea:focus {
     animation: slide-out-to-right 300ms ease-out forwards;
   }
 }
-
