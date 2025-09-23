@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { updateFilter, selectVisibleMugs } from "@/redux";
 import { DEFAULT_OPTION, SEASON_OPTIONS, SERIES_OPTIONS, OWNED_OPTIONS } from "@/utils";
 import { Dropdown, mapToDropdownOptions } from "@/components/ui/dropdown";
-import MugListItem from "@/components/ui/MugListItem";
+import { FadeWrapper, MugListItem, } from "@/components";
 
 
 const HomePage = () => {
@@ -45,17 +45,18 @@ const HomePage = () => {
         </div>
       </div>
 
-
-      <div className="my-10 px-5 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 space-x-2">
-        {visibleMugs.map(mug => (
-          <MugListItem
-            key={mug.number}
-            name={mug.name}
-            number={mug.number}
-            slug={mug.slug}
-          />
-        ))}
-      </div>
+      <FadeWrapper key={JSON.stringify(filters)}>
+        <div className="my-10 px-5 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 space-x-2">
+          {visibleMugs.map(mug => (
+            <MugListItem
+              key={mug.number}
+              name={mug.name}
+              number={mug.number}
+              slug={mug.slug}
+            />
+          ))}
+        </div>
+      </FadeWrapper>
     </section>
   );
 }
