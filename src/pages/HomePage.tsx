@@ -20,7 +20,7 @@ const HomePage = () => {
   return (
     <section className="w-full flex flex-col items-center justify-center">
       <div className="w-full bg-primary pb-5">
-        <div className="mt-2 w-full md:w-2/3 flex px-5 space-x-2">
+        <div className="mt-2 w-full md:w-1/2 md:mx-auto flex px-5 space-x-2">
           <Dropdown
             id="seasonFilter"
             label="Seasonal"
