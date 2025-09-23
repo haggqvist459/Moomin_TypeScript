@@ -4,7 +4,6 @@ export const ROUTES = {
   DETAILS: '/details/:id',
   DETAILS_PAGE: '/details/',
   ADMIN: '/admin',
-  ABOUT: '/about',
   ERROR: '/*',
 } as const
 
@@ -18,11 +17,6 @@ export const NAVBAR_OPTIONS = {
     route: ROUTES.ADMIN,
     id: 4,
     text: 'Admin'
-  },
-  ABOUT: {
-    route: ROUTES.ABOUT,
-    id: 5,
-    text: 'About'
   },
 } as const
 
