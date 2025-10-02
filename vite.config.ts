@@ -22,8 +22,21 @@ export default defineConfig({
         enabled: true
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,woff2,woff,ttf,eot,png,webmanifest}'],
-        navigateFallback: 'index.html'
+        globPatterns: ['**/*.{js,css,html,svg,woff2,woff,ttf,eot,webmanifest}'],
+        navigateFallback: 'index.html',
+        runtimeCaching: [
+          {
+            urlPattern: ({ request }) => request.destination === 'image',
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'images-cache',
+              expiration: {
+                maxEntries: 200,
+                maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
+              },
+            },
+          },
+        ],
       }
     })
   ],
